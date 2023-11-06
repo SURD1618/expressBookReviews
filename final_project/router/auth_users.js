@@ -22,7 +22,7 @@ const authenticatedUser = (username,password)=>{ //returns boolean
     return matchingUsers.length > 0;
 }
 
-//only registered users can login
+//TASK 7 : only registered users can login
 regd_users.post("/login", (req,res) => {
     console.log("login: ", req.body);
     const username = req.body.username;
