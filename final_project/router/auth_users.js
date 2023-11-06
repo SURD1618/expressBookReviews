@@ -22,7 +22,7 @@ const authenticatedUser = (username,password)=>{ //returns boolean
     return matchingUsers.length > 0;
 }
 
-//TASK 7 : only registered users can login
+// TASK 7 : only registered users can login
 regd_users.post("/login", (req,res) => {
     console.log("login: ", req.body);
     const username = req.body.username;
@@ -46,7 +46,7 @@ regd_users.post("/login", (req,res) => {
       }
 });
 
-// Add a book review
+// TASK 8: Add a book review
 regd_users.put("/auth/review/:isbn", (req, res) => {
 
     const isbn = req.params.isbn;
@@ -63,7 +63,7 @@ regd_users.put("/auth/review/:isbn", (req, res) => {
     }
 });
 
-//Delete a book review
+// TASK 9 : Delete book review added by that particular user
 regd_users.delete("/auth/review/:isbn", (req, res) => {
     const isbn = req.params.isbn;
     const username = req.session.authorization.username;
